@@ -10,6 +10,7 @@ rowa_project/
 ├── node_server.py    # Mỗi nút là một Flask server độc lập
 ├── coordinator.py    # Bộ điều phối thực thi ROWA
 ├── demo.py           # Script chạy toàn bộ kịch bản demo
+├── web_app.py        # Giao diện web trực quan
 └── requirements.txt
 ```
 
@@ -48,6 +49,41 @@ python node_server.py NodeC 5003
 ```bash
 python demo.py
 ```
+
+### Cách 3: Chạy giao diện Web (trực quan - khuyến nghị)
+Mở 4 terminal riêng biệt:
+
+**Terminal 1 - NodeA:**
+```bash
+python node_server.py NodeA 5001
+```
+
+**Terminal 2 - NodeB:**
+```bash
+python node_server.py NodeB 5002
+```
+
+**Terminal 3 - NodeC:**
+```bash
+python node_server.py NodeC 5003
+```
+
+**Terminal 4 - Web App:**
+```bash
+python web_app.py
+```
+
+Sau đó, mở trình duyệt và truy cập vào:
+```
+http://localhost:5000
+```
+
+**Lợi ích của giao diện Web:**
+- 📊 **Hiển thị trực quan** trạng thái của 3 nút (NodeA, NodeB, NodeC)
+- 🔄 **Theo dõi real-time** các thao tác đọc/ghi trên hệ thống
+- 🎯 **Thao tác dễ dàng** với giao diện đồ họa thay vì dòng lệnh
+- 💾 **Xem dữ liệu trực tiếp** trên các nút và tính nhất quán
+- ⚡ **Kiểm tra hiệu năng** của giao thức ROWA một cách trực quan
 
 ## Kịch bản Demo
 
